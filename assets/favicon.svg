@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="logoTitle">
+<title id="logoTitle">Ubaid News</title>
+<rect width="100" height="100" rx="16" fill="#0ea5e9"/>
+<path d="M30 65 L45 35 L60 65 Z" fill="#fff"/>
+<circle cx="75" cy="25" r="10" fill="#fff" opacity="0.9"/>
+</svg>
