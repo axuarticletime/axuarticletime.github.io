@@ -61,23 +61,31 @@ html,body{margin:0;padding:0;font-family:Inter,ui-sans-serif,system-ui,-apple-sy
   overflow: hidden;
   margin-bottom: 16px;
   background: #fff;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
 
 .story a {
-  display: block;
-  color: var(--text);
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
   text-decoration: none;
+  color: var(--text);
+  width: 100%;
 }
 
-.story img {
-  width: 100%;
-  height: auto;
-  display: block;
+.story img.thumbnail {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .story-content {
-  padding: 12px;
+  flex: 1;
+  padding: 12px 0;
 }
 
 .story-content .kicker {
@@ -100,3 +108,19 @@ html,body{margin:0;padding:0;font-family:Inter,ui-sans-serif,system-ui,-apple-sy
   font-size: 14px;
   line-height: 1.5;
 }
+
+@media (max-width: 600px) {
+  .story {
+    flex-direction: column;
+  }
+
+  .story a {
+    flex-direction: column;
+  }
+
+  .story img.thumbnail {
+    width: 100%;
+    height: auto;
+  }
+}
+
