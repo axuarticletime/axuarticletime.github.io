@@ -1,28 +1,25 @@
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Role of Website and Digital Life in Modern society</title>
-<meta name="description" content="A recent development in model architectures reduces training time without sacrificing accuracy.">
+<title>The Role of Website and Digital Life in Modern Society</title>
+<meta name="description" content="A recent development in modern tech reduces training time without sacrificing accuracy.">
 <link rel="icon" href="/assets/logo.svg">
 <link rel="stylesheet" href="/assets/style.css">
-
 </head>
 <body>
 
-
 <header class="container header" role="banner">
   <div class="brand">
-    <a href="/"><img src="/assets/logo.svg" alt="Ubaid News" style="height:40px"></a>
+    <a href="/"><img src="/assets/logo.svg" alt="Ubaid News Logo" style="height:40px"></a>
     <div>
-      <div style="font-weight:700">Ubaid News</div>
-      <div class="small">Clear. Concise. Credible.</div>
+      <p style="font-weight:700">Ubaid News</p>
+      <p class="small">Clear. Concise. Credible.</p>
     </div>
   </div>
 
-  <div style="display:flex;align-items:center;gap:12px">
+  <div class="header-actions">
     <nav class="nav" role="navigation" aria-label="Main">
       <a href="/">Home</a>
       <a href="/health/">Health</a>
@@ -36,7 +33,7 @@
       <button aria-hidden="true">🔎</button>
     </div>
 
-    <button onclick="toggleMobileNav()" aria-label="Toggle nav" style="display:none">☰</button>
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMobileNav()">☰</button>
   </div>
 </header>
 
@@ -46,25 +43,26 @@
     <h1>AI Breakthrough Promises Faster Models</h1>
     <div class="small">By Ubaid Ali — 2025-07-20</div>
     <div class="meta-tags">Tags: AI, machine learning</div>
-    <!-- Featured Image -->
-<div style="margin-top:12px">
-  <img src="img/the-role-of-website-and-digital-life-in-modern-society.png" 
-       alt="The Role of Website and Digital Life" style="max-width:100%;height:auto;">
-</div>
 
-<p><strong>Websites:</strong></p>
+    <div class="featured-image" style="margin-top:12px">
+      <img src="img/the-role-of-website-and-digital-life-in-modern-society.png" 
+           alt="The Role of Website and Digital Life" 
+           style="max-width:100%;height:auto;" 
+           loading="lazy">
+    </div>
 
+    <p><strong>Websites:</strong></p>
     <p>Websites are part of our daily life — from social media to search engines. Even Google itself is a website, visited by billions every day. The growth of websites has been fueled by advancements in technology, especially Artificial Intelligence (AI), which has revolutionized how we search, create, and communicate.</p>
-    <p>Today, tasks that once took hours can now be completed in minutes. Tools like Canva, ChatGPT, and website builders make it possible to create professional designs and sites without any coding knowledge. While this is convenient, there’s a downside — over-reliance on AI can make us mentally lazy. For example, simple math that we once did in our heads is now handed off to AI tools without much thought.</p>
+    <p>Today, tasks that once took hours can now be completed in minutes. Tools like Canva, ChatGPT, and website builders make it possible to create professional designs and sites without any coding knowledge. While this is convenient, there’s a downside — over-reliance on AI can make us mentally lazy. For example, simple math that we once did in our heads is now handled by AI tools without much thought.</p>
 
     <h2>Digital Life</h2>
-    <p>“Digital life” refers to the integration of digital technology into our everyday living. From miniature wearable computers to flying cars, many inventions once considered dreams are now realities. Robots, AI assistants, and smart devices have transformed industries — but they also raise questions about what makes human experience unique, such as emotions and personal connection.</p>
+    <p>“Digital life” refers to the integration of digital technology into our everyday living. From wearable devices to futuristic inventions, many ideas once considered dreams are now realities. Robots, AI assistants, and smart devices have transformed industries — but they also raise questions about what makes human experience unique, such as emotions and personal connection.</p>
 
     <h2>Drawbacks</h2>
     <p>Technology makes life easier, but it also creates dependency. Mobile phones and social media consume so much of our attention that real-life interaction suffers. Students rely heavily on laptops instead of books, which may lead to health issues such as poor eyesight. Overuse of digital tools can also erode critical thinking and problem-solving skills.</p>
     <p>Ultimately, technology itself isn’t good or bad — it’s how we use it. Being mindful of our digital habits, staying safe online, and guiding children toward responsible internet use are crucial steps toward a healthier digital life.</p>
 
-    <h3>Key takeaways</h3>
+    <h3>Key Takeaways</h3>
     <ul>
       <li>Websites and AI tools have revolutionized access to information and services.</li>
       <li>Over-reliance on technology can lead to laziness and reduced problem-solving skills.</li>
@@ -72,8 +70,7 @@
       <li>Mindful and safe technology use is essential for long-term well-being.</li>
     </ul>
 
-
-    <pre class="code-block">/* Example snippet or data */\nconsole.log('Hello world');</pre>
+    <pre class="code-block"><code>console.log('Hello world');</code></pre>
 
     <script type="application/ld+json">
     {
@@ -93,7 +90,7 @@
            "url":"/assets/logo.svg"
         }
       },
-      "description":"A recent development in modren Tech reduces training time without."
+      "description":"A recent development in modern tech reduces training time without sacrificing accuracy."
     }
     </script>
 
@@ -105,8 +102,8 @@
   <div class="small">Designed for demo: <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
   <div class="small">Ads: <span class="small">Header / In-article / Sidebar / Footer</span></div>
 </footer>
-<script src="/assets/search.js"></script>
-<script src="/assets/main.js"></script>
 
+<script src="/assets/search.js" defer></script>
+<script src="/assets/main.js" defer></script>
 </body>
 </html>
