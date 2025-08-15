@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Website Got Indexed in 15 Minutes</title>
+<meta name="description" content="How I built a website that was indexed by Google in 15 minutes, and why I left Blogger and free WordPress behind.">
+<link rel="icon" href="/assets/logo.svg">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="container header" role="banner">
+  <div class="brand">
+    <a href="/"><img src="/assets/logo.svg" alt="Ubaid News Logo" style="height:40px"></a>
+    <div>
+      <p style="font-weight:700">Ubaid News</p>
+      <p class="small">Clear. Concise. Credible.</p>
+    </div>
+  </div>
+
+  <div class="header-actions">
+    <nav class="nav" role="navigation" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/health/">Health</a>
+      <a href="/tech/">Tech</a>
+      <a href="/general/">General</a>
+      <a href="/about.html">About</a>
+    </nav>
+
+    <div class="searchbar" role="search" aria-label="Site search">
+      <input type="search" placeholder="Search articles..." aria-label="Search">
+      <button aria-hidden="true">🔎</button>
+    </div>
+
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMobileNav()">☰</button>
+  </div>
+</header>
+
+<main class="container">
+  <article class="article post-content">
+    <div class="kicker">GENERAL</div>
+    <h1>My Website Got Indexed in 15 Minutes</h1>
+    <div class="small">By Ubaid Ali — 2025-08-12</div>
+    <div class="meta-tags">Tags: Blogging, GitHub, SEO</div>
+
+    <!-- Featured Image -->
+    <div class="featured-image" style="margin-top:12px">
+      <img src="img/my-website-got-indexed-in.png" 
+           alt="My Website Got Indexed Quickly" 
+           style="max-width:100%;height:auto;" 
+           loading="lazy">
+    </div>
+
+    <p>I created a simple website on GitHub, and shockingly, it got indexed by Google in just 15 minutes. It took me only four hours to build and set up the website. Honestly, I thought I would again see a red “redirect error” like what I constantly saw with Blogger. But this time, it worked perfectly.</p>
+
+    <p>For three long years, I worked on a Blogger site. I watched every YouTube tutorial, changed over 45 themes, used robots.txt, and tried every custom redirect setting — but the same issue stayed: <strong>redirect error due to m=1</strong>. That small m=1 problem was the reason my Blogger site kept failing to get indexed.</p>
+
+    <h2>Blogger m=1 Issue (Built-In Problem)</h2>
+    <p>Blogger sites are forced to use "m=1" for mobile pages. Google uses both desktop and mobile bots to scan your site, and this small redirect messes up indexing — especially if you keep redirecting users automatically. That’s why many Blogger websites never fully get indexed. It’s simply a limitation of the platform.</p>
+
+    <h2>WordPress: Free vs Paid</h2>
+    <p>WordPress feels easy because many hosting companies provide it in one click (like Hostinger or GoDaddy). But again — nothing is free. Free WordPress (.com) has limited features, no good themes, and cannot be monetized with AdSense. The paid version (WordPress.org) supports ads, but you must pay for hosting and still need to build organic traffic.</p>
+    <p>Also, Google warns about AI-generated content. They allow it, but if you simply copy and paste from ChatGPT and change a few lines, it will still be considered low-quality content. That is why original content matters more than ever.</p>
+
+    <h2>Why GitHub Worked for Me</h2>
+    <p>GitHub requires a bit of coding understanding or at least some patience. I made one small mistake in my image filename (png vs .png) and it took me three days to catch it — even with ChatGPT. But once I fixed everything, Google indexed my site in 15 minutes! No redirect error, no m=1 problem, no plugin issues. Just clean static HTML.</p>
+    <p>So if you are willing to learn basic HTML and work with free tools like GitHub Pages, you can build a professional, fast website that Google loves.</p>
+
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Blogger’s m=1 issue is unsolvable and blocks proper indexing.</li>
+      <li>Free WordPress cannot be monetized and is very limited.</li>
+      <li>GitHub sites require learning but get indexed super fast.</li>
+      <li>Always use original content — don’t rely only on AI.</li>
+      <li>Sometimes starting fresh on a new platform saves years of frustration.</li>
+    </ul>
+
+    <p>In my next blog, I will show step-by-step how I created this GitHub site without being a developer. If I can do it, you can too. Follow and stay updated — and stay safe!</p>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "My Website Got Indexed in 15 Minutes",
+      "datePublished": "2025-08-12",
+      "author": {
+        "@type":"Person",
+        "name":"Ubaid Ali"
+      },
+      "publisher": {
+        "@type":"Organization",
+        "name":"Ubaid News",
+        "logo": {
+           "@type":"ImageObject",
+           "url":"/assets/logo.svg"
+        }
+      },
+      "description":"How I created a website that got indexed by Google in just 15 minutes and why I left Blogger and WordPress."
+    }
+    </script>
+  </article>
+</main>
+
+<footer class="container footer" role="contentinfo">
+  <div>© Ubaid Ali — Ubaid News</div>
+  <div class="small">Privacy · Terms</div>
+</footer>
+
+<script src="/assets/search.js" defer></script>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
