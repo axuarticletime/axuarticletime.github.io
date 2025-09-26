@@ -1,4 +1,4 @@
-// search.js - client-side search with highlighting
+// search.js - client-side search with highlighting + thumbnails
 const postsIndex = JSON.parse(document.getElementById('__posts_index').textContent || '[]');
 
 function escapeHTML(str) {
@@ -27,15 +27,16 @@ function doSearch(q) {
   if (!q) { out.innerHTML = ''; return; }
   if (results.length === 0) { out.innerHTML = '<div class="small">No results</div>'; return; }
 
-  out.innerHTML = results.map(r => {
-    return `
-      <div class="article">
+  out.innerHTML = results.map(r => `
+    <div class="article">
+      ${r.image ? `<img src="${escapeHTML(r.image)}" alt="${escapeHTML(r.title)}">` : ''}
+      <div class="article-content">
         <h3><a href="${escapeHTML(r.url)}">${highlight(r.title, q)}</a></h3>
         <div class="small">By ${escapeHTML(r.author)} — ${escapeHTML(r.date)}</div>
         <p class="excerpt">${highlight(r.excerpt, q)}</p>
       </div>
-    `;
-  }).join('');
+    </div>
+  `).join('');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,4 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 
