@@ -4,177 +4,394 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ubaid News - Home</title>
-<meta name="description" content="Home of Ubaid News: Clear, Concise, Credible News">
+<meta name="description" content="Home of Ubaid News:  privacy, ">
 <link rel="icon" href="/assets/logo.svg">
-
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1202580350633175"
-crossorigin="anonymous"></script>
-
-<!-- Premium CSS -->
-<style>
-:root{
-  --bg:#ffffff; --text:#111827; --muted:#6b7280; --accent:#0ea5e9;
-  --max-width:1100px;
-}
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
-body{background:var(--bg);color:var(--text);line-height:1.6;}
-.container{max-width:var(--max-width);margin:0 auto;padding:16px;}
-.header{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);z-index:999;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #e6eef6;}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{height:40px;width:40px}
-.nav{display:flex;gap:14px;align-items:center}
-.nav a{color:var(--text);text-decoration:none;padding:8px;border-radius:6px;transition:background 0.2s}
-.nav a:hover{background:rgba(14,165,233,0.08)}
-.searchbar{position:relative}
-.searchbar input{padding:8px 36px 8px 12px;border:1px solid #e5e7eb;border-radius:8px;min-width:200px;}
-.searchbar button{position:absolute;right:4px;top:4px;bottom:4px;border:0;background:transparent;padding:6px;cursor:pointer;}
-.main{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:18px}
-@media(max-width:900px){.main{grid-template-columns:1fr}.sidebar{display:none}}
-.featured{border-radius:10px;overflow:hidden;border:1px solid #e6eef6;margin-bottom:24px}
-.featured img{width:100%;height:200px;object-fit:cover;border-radius:8px}
-.slider{display:flex;transition:transform 0.8s ease;}
-.article,.story{border:1px solid #e6eef6;border-radius:10px;overflow:hidden;margin-bottom:16px;background:#fff;display:flex;flex-direction:row;gap:12px}
-.story a{display:flex;flex-direction:row;gap:12px;text-decoration:none;color:var(--text);width:100%}
-.story img.thumbnail{width:120px;height:120px;object-fit:cover;border-radius:8px;flex-shrink:0}
-.story-content{flex:1;padding:12px 0}
-.story-content .kicker{font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.story-content h3{margin:6px 0;font-size:18px;line-height:1.3}
-.story-content p{margin:4px 0 0 0;color:var(--muted);font-size:14px;line-height:1.5}
-.sidebar{position:sticky;top:24px;background:#fbfdff;padding:12px;border-radius:10px;border:1px solid #e6eef6}
-.widget{margin-bottom:18px}
-.subscribe input{width:100%;padding:8px;border-radius:6px;border:1px solid #e5e7eb;margin-top:8px}
-.footer{border-top:1px solid #eef2f7;margin-top:32px;padding:20px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.featured-image img{width:100%;height:200px;object-fit:cover;object-position:center;display:block;margin:0 auto;border-radius:8px}
-.reading-progress{position:fixed;top:0;left:0;height:4px;background:var(--accent);width:0%;z-index:9999;transition:width 0.1s;}
-@media(max-width:600px){.story{flex-direction:column}.story img.thumbnail{width:100%;height:auto}}
-</style>
+<link rel="stylesheet" href="/assets/style.css">
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1202580350633175"
+     crossorigin="anonymous"></script>
 </head>
 <body>
 
-<!-- Reading Progress -->
-<div class="reading-progress" id="reading-progress"></div>
-
 <header class="container header" role="banner">
   <div class="brand">
-    <a href="/"><img src="/assets/logo.svg" alt="Ubaid News"></a>
+    <a href="/"><img src="/assets/logo.svg" alt="Ubaid News" style="height:40px"></a>
     <div>
       <div style="font-weight:700">Ubaid News</div>
       <div class="small">Clear. Concise. Credible.</div>
     </div>
   </div>
+
   <div style="display:flex;align-items:center;gap:12px">
     <nav class="nav" role="navigation" aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/terms.html">Terms</a>
-      <a href="/about.html">About</a>
+     <a href="/">Home</a>
+    <a href="/privacy.html">Privacy</a>
+     <a href="/contact.html">Contact</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/about.html">About</a>
+     
     </nav>
-    <div class="searchbar" role="search">
+
+    <div class="searchbar" role="search" aria-label="Site search">
       <input type="search" placeholder="Search articles..." aria-label="Search">
       <button aria-hidden="true">🔎</button>
     </div>
+     <div id="search-results" class="search-results"></div>
+
+
+    <button onclick="toggleMobileNav()" aria-label="Toggle nav" style="display:none">☰</button>
   </div>
 </header>
+<section class="featured" style="overflow:hidden; position:relative; max-width:900px; margin:auto;">
+  <div class="slider" style="display:flex; transition:transform 0.8s ease;">
+    
+    <!-- Slide 1 -->
+    <a href="/posts/How-to-Get-Google-AdSense-Approved-in-2025-Easy-Tips-for-New-Bloggers.html" 
+       style="flex:0 0 100%; text-decoration:none; color:inherit; display:flex; align-items:center; gap:16px; padding:16px; box-sizing:border-box;">
+      <img src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/How-to-Get-Google-AdSense-Approved-in-2025-Easy-Tips-for-New-Bloggers.png" 
+           alt="How to Get Google AdSense Approved in 2025 Easy Tips for New Bloggers" style="width:160px; height:100px; object-fit:cover; border-radius:6px;">
+      <div>
+        <h2 style="margin:0 0 6px 0; font-size:20px;">AdSense Approval Tips</h2>
+        <p class="small" style="margin:0 0 6px 0;">By Ubaid Ali — 2025-07-20</p>
+        <p style="margin:0; font-size:14px; color:#444;">Practical tips to get Google AdSense approval and maximize your earnings.</p>
+      </div>
+    </a>
 
-<!-- Featured Slider -->
-<section class="featured container">
-  <div class="slider">
-    <a href="/posts/How-to-Get-Google-AdSense-Approved-in-2025-Easy-Tips-for-New-Bloggers.html">
-      <img src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/How-to-Get-Google-AdSense-Approved-in-2025-Easy-Tips-for-New-Bloggers.png" loading="lazy" decoding="async">
+    <!-- Slide 2 -->
+    <a href="/posts/the-human-side-of-technology.html" 
+       style="flex:0 0 100%; text-decoration:none; color:inherit; display:flex; align-items:center; gap:16px; padding:16px; box-sizing:border-box;">
+      <img src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/the-human-side-of-technology.png" 
+           alt="The Human Side of Technology" style="width:160px; height:100px; object-fit:cover; border-radius:6px;">
       <div>
-        <h2>AdSense Approval Tips</h2>
-        <p class="small">By Ubaid Ali — 2025-07-20</p>
+        <h2 style="margin:0 0 6px 0; font-size:20px;">The Human Side of Technology</h2>
+        <p class="small" style="margin:0 0 6px 0;">By Ubaid Ali — 2025-09-08</p>
+        <p style="margin:0; font-size:14px; color:#444;">Technology is more than machines — it’s about people and how it shapes daily life.</p>
       </div>
     </a>
-    <a href="/posts/the-human-side-of-technology.html">
-      <img src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/the-human-side-of-technology.png" loading="lazy" decoding="async">
+
+    <!-- Slide 3 -->
+    <a href="/posts/future-of-artificial-intelligence.html" 
+       style="flex:0 0 100%; text-decoration:none; color:inherit; display:flex; align-items:center; gap:16px; padding:16px; box-sizing:border-box;">
+      <img src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/future-of-artificial-intelligence.png" 
+           alt="Future of Artificial Intelligence" style="width:160px; height:100px; object-fit:cover; border-radius:6px;">
       <div>
-        <h2>The Human Side of Technology</h2>
-        <p class="small">By Ubaid Ali — 2025-09-08</p>
+        <h2 style="margin:0 0 6px 0; font-size:20px;">Future of Artificial Intelligence</h2>
+        <p class="small" style="margin:0 0 6px 0;">By Ubaid Ali — 2025-08-15</p>
+        <p style="margin:0; font-size:14px; color:#444;">Artificial Intelligence is transforming daily life, work, and industries.</p>
       </div>
     </a>
-    <a href="/posts/future-of-artificial-intelligence.html">
-      <img src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/future-of-artificial-intelligence.png" loading="lazy" decoding="async">
-      <div>
-        <h2>Future of AI</h2>
-        <p class="small">By Ubaid Ali — 2025-08-15</p>
-      </div>
-    </a>
+
   </div>
 </section>
 
-<!-- Main Content -->
-<div class="container main">
-  <div class="posts">
-    <!-- Example Story Post -->
-    <article class="story">
+<script>
+  let currentSlide = 0;
+  function showSlide() {
+    const slider = document.querySelector('.slider');
+    const totalSlides = slider.children.length;
+    currentSlide = (currentSlide + 1) % totalSlides;
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+  setInterval(showSlide, 4000);
+</script>
+
+
+<div class="main" role="main">
+  <div>
+    <!-- Post preview with thumbnail -->
+
+   <article class="story">
       <a href="/posts/How-to-Get-Google-AdSense-Approved-in-2025-Easy-Tips-for-New-Bloggers.html">
-        <img class="thumbnail" src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/How-to-Get-Google-AdSense-Approved-in-2025-Easy-Tips-for-New-Bloggers.png" alt="AdSense Tips" loading="lazy" decoding="async">
+        <img class="thumbnail" 
+             src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/How-to-Get-Google-AdSense-Approved-in-2025-Easy-Tips-for-New-Bloggers.png" 
+             alt="How to Get Google AdSense Approved in 2025 Easy Tips for New Bloggers">
         <div class="story-content">
           <div class="kicker">GENERAL</div>
-          <h3>AdSense Approval Tips</h3>
-          <p>Practical tips to get Google AdSense approval and maximize your earnings.</p>
-          <small class="reading-time"></small>
+          <h3>How to Get Google AdSense Approved in 2025 Easy Tips for New Bloggers</h3>
+          <p>Struggling to get your blog approved for Google AdSense? Many bloggers receive rejection emails, but the fixes are often straightforward.</p>
         </div>
       </a>
     </article>
+    
 
-    <!-- Repeat story blocks for each post… copy your current story blocks here -->
+ <article class="story">
+  <a href="/posts/Foldable-Phones-in-2025-The-Next-Big-Thing-for-Smartphones.html">
+    <img class="thumbnail"
+         src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/Foldable-Phones-in-2025-The-Next-Big-Thing-for-Smartphones.png"
+         alt="The Rise of Foldable Smartphones">
+    <div class="story-content">
+      <div class="kicker">TECH</div>
+      <h3>Foldable Phones in 2025: The Next Big Thing for Smartphones?</h3>
+      <p>Discover foldable phones in 2025 with simple tips on how they work, real user experiences, and why they might replace regular smartphones..</p>
+    </div>
+  </a>
+</article>
+
+     
+     <article class="story">
+  <a href="/posts/Tech-Trends-Shaping-Our-World-in-2025.html">
+    <img class="thumbnail"
+         src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/Tech-Trends-Shaping-Our-World-in-2025.png"
+         alt="Tech Trends Shaping Our World in 2025">
+    <div class="story-content">
+      <div class="kicker">TECH</div>
+      <h3>Tech Trends Shaping Our World in 2025</h3>
+      <p>Explore 2025 tech trends including AI, cloud, cybersecurity, IoT, and green technology.</p>
+    </div>
+  </a>
+</article>
+
+
+
+
+<article class="story">
+  <a href="/posts/6G-in-2030-Whats-Coming-for-Fast-Internet.html">
+    <img class="thumbnail"
+         src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/6G-in-2030-Whats-Coming-for-Fast-Internet.png"
+         alt="6G in 2030: What’s Coming for Fast Internet"
+         loading="lazy">
+    <div class="story-content">
+      <div class="kicker">TECH</div>
+      <h3>6G in 2030: What’s Coming for Fast Internet</h3>
+      <p>Learn about 6G, the next big internet leap for 2030. Real examples show how it’ll speed up phones, help doctors, and connect cities. No tricks, just honest facts.</p>
+    </div>
+  </a>
+</article>
+
+    
+    <article class="story">
+  <a href="/posts/Tech-and-People-in-2025-Simple-Ways-It-Shapes-Life.html">
+    <img class="thumbnail" 
+         src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/Tech-and-People-in-2025-Simple-Ways-It-Shapes-Life.png" 
+         alt="Tech and People in 2025: Simple Ways It Shapes Life">
+    <div class="story-content">
+      <div class="kicker">TECH</div>
+      <h3>Tech and People in 2025: Simple Ways It Shapes Life</h3>
+      <p>See how technology changes daily life in 2025 with real examples. Learn how it helps with work, school, health, and fun.</p>
+    </div>
+  </a>
+</article>
+
+    <article class="story">
+  <a href="/posts/The-Rise-of-SolidState-Batteries-Powering-the-Next-Generation.html">
+    <img class="thumbnail" 
+         src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/The-Rise-of-SolidState-Batteries-Powering-the-Next-Generation.png" 
+         alt="The Rise of Solid-State Batteries: Powering the Next Generation"
+         loading="lazy">
+    <div class="story-content">
+      <div class="kicker">TECH</div>
+      <h3>The Rise of Solid-State Batteries</h3>
+      <p>Discover how solid-state batteries promise safer, faster, and longer-lasting power for devices, electric vehicles, and future technologies.</p>
+    </div>
+  </a>
+</article>
+
+
+
+<article class="story">
+  <a href="/posts/AI-in-2025-Simple-Guide-to-Smart-Techs-Future.html">
+    <img class="thumbnail" 
+         src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/AI-in-2025-Simple-Guide-to-Smart-Techs-Future.png" 
+         alt="AI in 2025: Simple Guide to Smart Tech’s Future">
+    <div class="story-content">
+      <div class="kicker">TECH</div>
+      <h3>AI in 2025: Simple Guide to Smart Tech’s Future</h3>
+      <p>Explore how AI changes life in 2025 with real examples. See how it helps phones, jobs, health, and more.</p>
+    </div>
+  </a>
+</article>
+
+
+
+<article class="story">
+  <a href="/posts/How-Tech-Changes-Our-Days-in-2025-Easy-Guide.html">
+    <img class="thumbnail" 
+         src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/How-Tech-Changes-Our-Days-in-2025-Easy-Guide.png" 
+         alt="How Tech Changes Our Days in 2025: Easy Guide">
+    <div class="story-content">
+      <div class="kicker">TECH</div>
+      <h3>How Tech Changes Our Days in 2025: Easy Guide</h3>
+      <p>From AI to VR, technology is shaping how we live, learn, and connect. Discover the benefits, challenges, and why balance is essential in the digital era.</p>
+    </div>
+  </a>
+</article>
+
+    
+
+ 
+
+ <article class="story">
+  <a href="/posts/2025-Tech-Boom-How-Super-Fast-Systems-Make-Websites-and-Life-Better.html">
+    <img class="thumbnail" 
+         src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/2025-Tech-Boom-How-Super-Fast-Systems-Make-Websites-and-Life-Better.png" 
+         alt="2025 Tech Boom How Super Fast Systems Make Websites and Life Better">
+    <div class="story-content">
+      <div class="kicker">TECH</div>
+      <h3>2025 Tech Boom: How Super-Fast Systems Make Websites and Life Better</h3>
+      <p>In July 2025, I was blown away reading about Intel’s latest breakthrough: they found a way to make computer systems work almost twice as fast as last year.</p>
+    </div>
+  </a>
+</article>
+
+
+    <article class="story">
+  <a href="/posts/my-website-got-indexed-in-15-minutes.html">
+    <img class="thumbnail"
+         src="https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/my-website-got-indexed-in.png"
+         alt="My Website Got Indexed in 15 Minutes">
+    <div class="story-content">
+      <div class="kicker">GENERAL</div>
+      <h3>My Website Got Indexed in 15 Minutes</h3>
+      <p>How I built a GitHub website that ranked on Google in minutes — and why I left Blogger and WordPress for good.</p>
+    </div>
+  </a>
+</article>
+
+
+
+    </div>
+
+    <aside class="sidebar" role="complementary">
+      <div class="widget">
+        <h3>Recent Posts</h3>
+        <div class="small"><a href="/posts/2025-Tech-Boom-How-Super-Fast-Systems-Make-Websites-and-Life-Better.html">2025 Tech Boom: How Super-Fast Systems Make Websites and Life Better</a></div>
+        <div class="small"><a href="/posts/the-tech-impact-on-life.html">The Tech Impact on Life</a></div>
+        <div class="small"><a href="/posts/future-of-artificial-intelligence.html">Global Economy:Future of Artifical Intelligence</a></div>
+      
+  <aside class="sidebar">
+  <div class="widget subscribe">
+    <h3>Subscribe</h3>
+    <p class="small">Get the weekly digest.</p>
+    <form action="#" method="post">
+      <label for="subscribe-email" class="sr-only">Email address</label>
+      <input 
+        type="email" 
+        id="subscribe-email" 
+        name="email" 
+        placeholder="email@example.com" 
+        required
+      >
+      <button type="submit">Subscribe</button>
+    </form>
   </div>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="widget">
-      <h3>Recent Posts</h3>
-      <div class="small"><a href="/posts/2025-Tech-Boom-How-Super-Fast-Systems-Make-Websites-and-Life-Better.html">2025 Tech Boom</a></div>
-      <div class="small"><a href="/posts/the-tech-impact-on-life.html">Tech Impact on Life</a></div>
-      <div class="small"><a href="/posts/future-of-artificial-intelligence.html">Future of AI</a></div>
-    </div>
-    <div class="widget subscribe">
-      <h3>Subscribe</h3>
-      <input type="email" placeholder="email@example.com">
-      <button>Subscribe</button>
-    </div>
-  </aside>
-</div>
+  <div class="">
+    </p>
+  </div>
 
-<!-- Footer -->
-<footer class="container footer">
+  <div class="widget social">
+  </div>
+</aside>
+
+<footer class="container footer" role="contentinfo">
   <div>© Ubaid Ali — Ubaid News</div>
   <div class="small">: <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a></div>
 </footer>
 
-<!-- Premium JS -->
-<script>
-// Slider Auto
-let currentSlide = 0;
-function showSlide(){
-  const slider = document.querySelector('.slider');
-  const total = slider.children.length;
-  currentSlide = (currentSlide + 1) % total;
-  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-setInterval(showSlide,4000);
-
-// Reading Progress Bar
-window.addEventListener('scroll',()=>{
-  const winScroll=document.body.scrollTop||document.documentElement.scrollTop;
-  const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-  document.getElementById('reading-progress').style.width=`${(winScroll/height)*100}%`;
-});
-
-// Auto reading time
-document.querySelectorAll('.story').forEach(story=>{
-  const text=story.querySelector('p').innerText;
-  const words=text.split(' ').length;
-  const time=Math.ceil(words/200);
-  story.querySelector('.reading-time').innerText=`⏱ ${time} min read`;
-});
+<script id="__posts_index" type="application/json">
+[
+  {
+    "title": "AdSense Approval Tips",
+    "url": "/posts/How-to-Get-Google-AdSense-Approved-in-2025-Easy-Tips-for-New-Bloggers.html",
+    "author": "Ubaid Ali",
+    "date": "2025-07-20",
+    "excerpt": "How to Get Google AdSense Approved in 2025: Easy Tips for New Bloggers",
+    "content": "Get Google AdSense approved in 2025 with simple, honest steps. Learn from real bloggers’ stories, improve your content, and grow real traffic—no shortcuts.",
+    "tags": ["General","Google AdSense","Blogging","Making Money Online"],
+    "image": "https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/How-to-Get-Google-AdSense-Approved-in-2025-Easy-Tips-for-New-Bloggers.png"
+  },
+  {
+    "title": "Tech and People in 2025: Simple Ways It Shapes Life",
+    "url": "/posts/Tech-and-People-in-2025-Simple-Ways-It-Shapes-Life.html",
+    "author": "Ubaid Ali",
+    "date": "2025-08-25",
+    "excerpt": "See how technology changes daily life in 2025 with real examples. Learn how it helps with work, school, health, and fun.",
+    "content": "Technology in 2025 shapes daily life through smart tools, online learning, and health innovations. From work to entertainment, tech makes everyday life easier and more connected.",
+    "tags": ["Tech","Society","Life"],
+    "image": "https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/Tech-and-People-in-2025-Simple-Ways-It-Shapes-Life.png"
+  },
+  {
+    "title": "AI in 2025: Simple Guide to Smart Tech’s Future",
+    "url": "/posts/AI-in-2025-Simple-Guide-to-Smart-Techs-Future.html",
+    "author": "Ubaid Ali",
+    "date": "2025-08-15",
+    "excerpt": "AI in 2025: Simple Guide to Smart Tech’s Future.",
+    "content": "Explore how AI changes life in 2025 with real examples. See how it helps phones, jobs, health, and more.",
+    "tags": ["Tech","AI","Future"],
+    "image": "https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/AI-in-2025-Simple-Guide-to-Smart-Techs-Future.png"
+  },
+  {
+    "title": "Foldable Phones in 2025: The Next Big Thing for Smartphones",
+    "url": "/posts/Foldable-Phones-in-2025-The-Next-Big-Thing-for-Smartphones.html",
+    "author": "Ubaid Ali",
+    "date": "2025-09-22",
+    "excerpt": "Foldable Phones in 2025: The Next Big Thing for Smartphones.",
+    "content": "Discover foldable phones in 2025 with simple tips on how they work, real user experiences, and why they might replace regular smartphones.",
+    "tags": ["Tech","Mobile","Smartphones"],
+    "image": "https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/Foldable-Phones-in-2025-The-Next-Big-Thing-for-Smartphones.png"
+  },
+  {
+    "title": "6G in 2030: What’s Coming for Fast Internet",
+    "url": "/posts/6G-in-2030-Whats-Coming-for-Fast-Internet.html",
+    "author": "Ubaid Ali",
+    "date": "2025-09-10",
+    "excerpt": "Learn about 6G, the next big internet leap for 2030. Real examples show how it’ll speed up phones, help doctors, and connect cities. No tricks, just honest facts.",
+    "content": "Learn about 6G, the next big internet leap for 2030. Real examples show how it’ll speed up phones, help doctors, and connect cities. No tricks, just honest facts.",
+    "tags": ["Tech","6G","Connectivity"],
+    "image": "https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/6G-in-2030-Whats-Coming-for-Fast-Internet.png"
+  },
+  {
+    "title": "The Rise of Solid-State Batteries",
+    "url": "/posts/The-Rise-of-SolidState-Batteries-Powering-the-Next-Generation.html",
+    "author": "Ubaid Ali",
+    "date": "2025-09-12",
+    "excerpt": "Solid-state batteries promise safer, faster, and longer-lasting power for devices and EVs.",
+    "content": "Discover how solid-state batteries promise safer, faster, and longer-lasting power for devices, electric vehicles, and future technologies.",
+    "tags": ["Tech","Energy","Innovation"],
+    "image": "https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/The-Rise-of-SolidState-Batteries-Powering-the-Next-Generation.png"
+  },
+  {
+    "title": "How Tech Changes Our Days in 2025: Easy Guide",
+    "url": "/posts/How-Tech-Changes-Our-Days-in-2025-Easy-Guide.html",
+    "author": "Ubaid Ali",
+    "date": "2025-09-05",
+    "excerpt": "See how tech makes life better in 2025 with simple tools, kids’ safety tips.",
+    "content": "See how tech makes life better in 2025 with simple tools, kids’ safety tips.",
+    "tags": ["Tech","AI","VR"],
+    "image": "https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/How-Tech-Changes-Our-Days-in-2025-Easy-Guide.png"
+  },
+  {
+    "title": "2025 Tech Boom: How Super-Fast Systems Make Websites and Life Better",
+    "url": "/posts/2025-Tech-Boom-How-Super-Fast-Systems-Make-Websites-and-Life-Better.html",
+    "author": "Ubaid Ali",
+    "date": "2025-09-18",
+    "excerpt": "Explore How Super-Fast Systems Make Websites and Life Better",
+    "content": "In July 2025, I was blown away reading about Intel’s latest breakthrough: they found a way to make computer systems work almost twice as fast as last year.",
+    "tags": ["Tech","Digital","Society"],
+    "image": "https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/2025-Tech-Boom-How-Super-Fast-Systems-Make-Websites-and-Life-Better.png"
+  },
+  {
+    "title": "My Website Got Indexed in 15 Minutes",
+    "url": "/posts/my-website-got-indexed-in-15-minutes.html",
+    "author": "Ubaid Ali",
+    "date": "2025-09-02",
+    "excerpt": "How I built a GitHub website that ranked on Google in minutes.",
+    "content": "How I built a GitHub website that ranked on Google in minutes — and why I left Blogger and WordPress for good.",
+    "tags": ["General","SEO","Indexing"],
+    "image": "https://raw.githubusercontent.com/axuarticletime/axuarticletime.github.io/main/img/my-website-got-indexed-in.png"
+  }
+]
 </script>
+
+
+<script src="/assets/search.js"></script>
+<script src="/assets/main.js"></script>
+
 </body>
 </html>
+
+
+
+
 
 
 
