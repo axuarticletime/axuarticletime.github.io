@@ -151,25 +151,30 @@ img{
 
 .story a{
   display:flex;
-  gap:14px;
-  padding:14px;
+  gap:12px;
+  padding:12px;
   text-decoration:none;
   color:var(--text);
+  align-items:flex-start;
 }
 
+/* SMALLER, NEWS STYLE IMAGE */
 .story img.thumbnail{
-  width:130px;
-  height:130px;
+  width:90px;
+  height:90px;
   object-fit:cover;
   border-radius:10px;
+  flex-shrink:0;
 }
 
+/* TEXT AREA */
 .story-content{
   flex:1;
 }
 
+/* CATEGORY TAG */
 .kicker{
-  font-size:12px;
+  font-size:11px;
   color:var(--accent);
   text-transform:uppercase;
   letter-spacing:1px;
